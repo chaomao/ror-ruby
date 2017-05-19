@@ -32,3 +32,5 @@ RUN apt-get install -y wget
 RUN wget https://github.com/graphql/libgraphqlparser/archive/v0.5.0.tar.gz
 RUN tar -xzvf v0.5.0.tar.gz
 RUN cd libgraphqlparser-0.5.0/ && cmake . && make && make install
+
+RUN gem install bundler
