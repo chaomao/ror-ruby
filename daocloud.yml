@@ -1,0 +1,13 @@
+version: 3.0
+image: library/ruby:2.3.0-slim
+env:
+  - LANGUAGE=ruby
+
+stages:
+  - build
+
+build_ror_base_image:
+  stage: build
+  job_type: image_build
+  dockerfile_path: /Dockerfile
+  build_dir: ./
