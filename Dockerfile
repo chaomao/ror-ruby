@@ -35,4 +35,5 @@ RUN cd libgraphqlparser-0.5.0/ && cmake . && make && make install
 
 RUN gem install bundler
 
+COPY . .
 RUN bundle install
