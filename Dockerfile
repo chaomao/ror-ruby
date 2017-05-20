@@ -34,3 +34,5 @@ RUN tar -xzvf v0.5.0.tar.gz
 RUN cd libgraphqlparser-0.5.0/ && cmake . && make && make install
 
 RUN gem install bundler
+
+RUN bundle install
