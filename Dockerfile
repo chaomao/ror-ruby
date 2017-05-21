@@ -33,7 +33,12 @@ RUN wget https://github.com/graphql/libgraphqlparser/archive/v0.5.0.tar.gz
 RUN tar -xzvf v0.5.0.tar.gz
 RUN cd libgraphqlparser-0.5.0/ && cmake . && make && make install
 
+# for wait_for use nc to check database
+RUN apt-get -y install netcat-traditional
+
 RUN gem install bundler
 
-COPY . .
-RUN bundle install
+COPY Gemfile /tmp/Gemfile
+COPY Gemfile.lock /tmp/Gemfile.lock
+RUN cd /tmp && bundle install
+RUN rm /tmp/Gemfile /tmp/Gemfile.lock
