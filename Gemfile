@@ -1,7 +1,7 @@
 source 'https://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '< 5.1'
+gem 'rails', '5.1.1'
 gem 'mysql2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
@@ -24,7 +24,7 @@ gem 'graphql-libgraphqlparser', '~> 0.5.0'
 
 #Omniauth
 gem 'devise_token_auth', '0.1.42'
-gem 'devise', '~> 4.0.1'
+gem 'devise', '~> 4.3.0'
 
 gem 'omniauth-qq-connect'
 gem 'omniauth-weibo-oauth2'
@@ -50,7 +50,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.5', '>= 3.5.1'
+  gem 'rspec-rails', '~> 3.6.0'
   gem 'rspec', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
