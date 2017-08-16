@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org'
+source 'https://gems.ruby-china.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.1'
@@ -12,6 +12,7 @@ gem 'mini_magick'
 gem 'case_transform'
 gem 'jsonapi-renderer'
 gem 'active_model_serializers'
+gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -30,8 +31,9 @@ gem 'omniauth-qq-connect'
 gem 'omniauth-weibo-oauth2'
 
 # upload file
-gem 'carrierwave-qiniu', '~> 0.2.3'
-gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave-qiniu', '~> 1.1.0'
+gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-i18n'
 gem 'qiniu'
 
 # lock nokogiri
@@ -42,6 +44,10 @@ gem 'apipie-rails'
 
 # Fix rake task can't run in docker
 gem 'listen', '~> 3.0.5'
+
+gem 'activerecord-session_store'
+
+gem 'paper_trail', '7.0.3'
 
 group :development, :test do
   gem 'annotate'
@@ -54,10 +60,12 @@ group :development, :test do
   gem 'rspec', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'stub_env'
 end
 
 group :test do
   gem 'fakeredis'
+  gem 'timecop'
 end
 
 group :development do
