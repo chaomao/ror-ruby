@@ -93,6 +93,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faker (1.8.4)
+      i18n (~> 0.5)
     fakeredis (0.6.0)
       redis (~> 3.2)
     faraday (0.11.0)
@@ -100,9 +102,6 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    graphql (0.19.4)
-    graphql-libgraphqlparser (0.5.2)
-      graphql (~> 0.11, < 1.0.0)
     hashie (3.5.5)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -292,9 +291,8 @@ DEPENDENCIES
   devise (~> 4.3.0)
   devise_token_auth (= 0.1.42)
   factory_girl_rails
+  faker
   fakeredis
-  graphql
-  graphql-libgraphqlparser (~> 0.5.0)
   jsonapi-renderer
   kaminari
   listen (~> 3.0.5)
@@ -321,4 +319,4 @@ DEPENDENCIES
   unicorn
 
 BUNDLED WITH
-   1.14.6
+   1.15.3

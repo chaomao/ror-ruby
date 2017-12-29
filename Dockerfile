@@ -9,35 +9,31 @@ deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib \n
 deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib \n\
 deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib" > /etc/apt/sources.list
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y \
+		imagemagick \
+		git  \
+		ruby-mysql libmysqlclient-dev \
+		build-essential libxml2-dev libxslt1-dev \
+		netcat-traditional
 
-# for image manipulation
-RUN apt-get install -y imagemagick
-
-# for running test on daocloud
-RUN apt-get install -y git
-
-# for mysql
-RUN apt-get install -y ruby-mysql libmysqlclient-dev
-
-# for nokogiri
-RUN apt-get install -y build-essential libxml2-dev libxslt1-dev
+# imagemagick for image manipulation
+# git for running test on daocloud
+# ruby-mysql libmysqlclient-dev for mysql
+# build-essential libxml2-dev libxslt1-dev for nokogiri
+# netcat-traditional for wait_for use nc to check database
 
 # install libgraphqlparser
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:george-edison55/cmake-3.x
-RUN apt-get update || true
-RUN apt-get install -y cmake
-RUN apt-get install -y wget
-RUN wget https://github.com/graphql/libgraphqlparser/archive/v0.5.0.tar.gz
-RUN tar -xzvf v0.5.0.tar.gz
-RUN cd libgraphqlparser-0.5.0/ && cmake . && make && make install
+#RUN apt-get install -y software-properties-common
+#RUN add-apt-repository -y ppa:george-edison55/cmake-3.x
+#RUN apt-get update || true
+#RUN apt-get install -y cmake
+#RUN apt-get install -y wget
+#RUN wget https://github.com/graphql/libgraphqlparser/archive/v0.5.0.tar.gz
+#RUN tar -xzvf v0.5.0.tar.gz
+#RUN cd libgraphqlparser-0.5.0/ && cmake . && make && make install
 
-# for wait_for use nc to check database
-RUN apt-get -y install netcat-traditional
 
 RUN gem install bundler
 
-COPY Gemfile /tmp/Gemfile
-COPY Gemfile.lock /tmp/Gemfile.lock
-RUN cd /tmp && bundle install
+COPY Gemfile* /
+RUN bundle install && rm Gemfile*

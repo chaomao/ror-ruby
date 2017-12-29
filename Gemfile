@@ -16,9 +16,6 @@ gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# GraphQL
-gem 'graphql'
-gem 'graphql-libgraphqlparser', '~> 0.5.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -61,6 +58,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'stub_env'
+  gem 'faker'
 end
 
 group :test do
