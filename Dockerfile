@@ -41,4 +41,3 @@ RUN gem install bundler
 COPY Gemfile /tmp/Gemfile
 COPY Gemfile.lock /tmp/Gemfile.lock
 RUN cd /tmp && bundle install
-RUN rm /tmp/Gemfile /tmp/Gemfile.lock
