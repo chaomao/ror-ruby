@@ -26,6 +26,7 @@ gem 'devise', '~> 4.3.0'
 
 gem 'omniauth-qq-connect'
 gem 'omniauth-weibo-oauth2'
+gem 'omniauth-wechat-oauth2', git: 'git@github.com:yangsr/omniauth-wechat-oauth2.git'
 
 # upload file
 gem 'carrierwave-qiniu', '~> 1.1.0'
